@@ -9,8 +9,8 @@
       </div>
     </div>
     <div class="container">
-      <div class="row options-container py-4 gx-4">
-      <div class="col-12 col-md-4 p-3" v-for="quiz in quizes" :key="quiz.id">
+      <div class="row options-container py-4 gx-4 d-flex">
+      <!-- <div class="col-12 col-md-4 p-3" v-for="quiz in quizes" :key="quiz.id">
         <div class="card p-3">
           <img class="img-fluid" src="./assets/math.png" alt="">
           <div class="card-text pt-2">
@@ -18,7 +18,8 @@
             <p>{{ quiz.questions.length + 1 }} Questions</p>
           </div>
         </div>
-      </div>
+      </div> -->
+      <Card class="d-flex" v-for="quiz in quizes" :key="quiz.id" :quiz="quiz" />
     </div>
     </div>
   </div>
@@ -27,6 +28,7 @@
 <script setup>
   import { ref,watch } from "vue"
   import q from "./data/data.json"
+  import Card from "./components/Card.vue";
   const search = ref("")
   const quizes = ref(q)
 
@@ -42,8 +44,6 @@ h1{
   font-size: 32px;
 }
 
-.card{
-  background-color: darkcyan;
-}
+
   
 </style>
