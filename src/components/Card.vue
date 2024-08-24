@@ -20,7 +20,7 @@ console.log(quiz)
 
 <style scoped> 
 .card{
-  background-color: darkcyan;
+  background-color: cyan;
 }
 
 </style>
